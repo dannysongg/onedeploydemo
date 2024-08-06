@@ -22,7 +22,7 @@ jobs:
           app-name: onedeployjava
           package: ${{ github.workspace }}/app.jar
 
-      - name: Deploy .NET App
+      - name: Deploy Python App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
