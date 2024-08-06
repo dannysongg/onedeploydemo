@@ -17,9 +17,17 @@ jobs:
 
       - uses: actions/checkout@v4
           
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
+      - name: Deploy Java App
+        id: deploy-to-java-app
         uses: azure/webapps-deploy@v3
         with:
           app-name: onedeployjava
           package: ${{ github.workspace }}/app.jar
+
+      - name: Deploy .NET App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: onedeploynet
+          package: ${{ github.workspace }}/app.zip
+        
