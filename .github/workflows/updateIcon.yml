@@ -21,5 +21,5 @@ jobs:
         with:
           app-name: onedeploypython
           package: ${{ github.workspace }}/python.svg
-          type: static
+          type: "static"
           target-path: /home/site/wwwroot/static/images/azure-icon.svg
