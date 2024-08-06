@@ -17,7 +17,7 @@ jobs:
           
       - name: Update Logo
         id: update-logo
-        uses: azure/webapps-deploy@v3
+        uses: azure/webapps-deploy@v3.0.1
         with:
           app-name: onedeploypython
           package: ${{ github.workspace }}/python.svg
