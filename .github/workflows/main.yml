@@ -1,0 +1,23 @@
+name: Demo OneDeploy
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Log in to Azure using Service Principal
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'onedeployjava'
+          package: '*.jar'
