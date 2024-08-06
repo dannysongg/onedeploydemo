@@ -1,0 +1,25 @@
+name: Update app with OneDeploy
+on: [workflow_dispatch]
+
+jobs:
+  deploy:
+    permissions:
+      contents: none
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Log in to Azure using Service Principal
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - uses: actions/checkout@v4
+          
+      - name: Update Logo
+        id: update-logo
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: onedeploypython
+          package: ${{ github.workspace }}/logo/python.svg
+          type: static
+          target-path: /home/site/wwwroot/static/images/azure-icon.svg
