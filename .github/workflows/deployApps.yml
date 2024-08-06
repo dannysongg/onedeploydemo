@@ -1,4 +1,4 @@
-name: Demo OneDeploy
+name: Deploy apps with OneDeploy
 on: [workflow_dispatch]
 
 jobs:
