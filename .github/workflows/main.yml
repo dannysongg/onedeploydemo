@@ -20,4 +20,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'onedeployjava'
-          package: '${{ github.workspace }}/app.jar'
+          package: ${{ github.workspace }}/app.jar
