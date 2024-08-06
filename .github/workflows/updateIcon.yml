@@ -20,6 +20,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: onedeploypython
-          package: ${{ github.workspace }}/img/python.svg
+          package: ${{ github.workspace }}/python.svg
           type: static
           target-path: /home/site/wwwroot/static/images/azure-icon.svg
