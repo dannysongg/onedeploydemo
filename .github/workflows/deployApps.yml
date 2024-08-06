@@ -21,6 +21,7 @@ jobs:
         with:
           app-name: onedeployjava
           package: ${{ github.workspace }}/app.jar
+          type: zip
 
       - name: Deploy Python App
         id: deploy-to-webapp
